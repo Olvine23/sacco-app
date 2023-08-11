@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:state/src/presentation/widgets/buttonCell.dart';
 
 class CustomHome extends StatelessWidget {
   const CustomHome({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -73,11 +74,10 @@ class CustomHome extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
                     ),
                     CircleAvatar(
-                      radius: 20,
+                        radius: 20,
                         backgroundColor: Color(0xff3D6ADA),
                         child: Icon(
                           Icons.add,
-                          
                           color: Colors.white,
                         ))
                   ],
@@ -88,36 +88,21 @@ class CustomHome extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      radius: 30,
-                        backgroundColor: Color(0xffD8E5FF),
-                        child: Icon(
-                          Icons.qr,
-
-                        color: Colors.black,
-                        )),
-                    CircleAvatar(
-                      radius: 30,
-                        backgroundColor: Color(0xffD8E5FF),
-                        child: Icon(
-                          Icons.add,
-                         color: Colors.black,
-                        )),
-                    CircleAvatar(
-                      radius: 30,
-                        backgroundColor: Color(0xffD8E5FF),
-                        child: Icon(
-                          Icons.add,
-                        
-                          color: Colors.black,
-                        )),
-                    CircleAvatar(
-                      radius: 30,
-                        backgroundColor: Color(0xffD8E5FF),
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.black,
-                        ))
+                    ButtonCell(
+                      text: 'Qr code',
+                      icon: Icons.qr_code_2_rounded,
+                    ),
+                    ButtonCell(
+                      text: 'Bank',
+                      icon: Icons.wallet,
+                    ),
+                    ButtonCell(
+                      text: 'Payment',
+                      icon: Icons.money,
+                    ),
+                    ButtonCell(
+                        text: 'Send Money', icon: Icons.compare_arrows_outlined),
+                
                   ],
                 ),
                 SizedBox(
