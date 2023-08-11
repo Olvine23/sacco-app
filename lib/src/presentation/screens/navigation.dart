@@ -11,6 +11,7 @@ import 'package:state/src/presentation/statistics_screen.dart';
 import 'package:state/src/presentation/statement_screen.dart';
 
 import '../welcome_screen.dart';
+import 'custom_home.dart';
 
 class NavigationScreen extends StatefulWidget {
  NavigationScreen({super.key});
@@ -28,7 +29,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
  int selectedIndex = 0;
 
- final  buildBody = [WelcomeScreen(), TransactionScreen(), LoansScreen()];
+ final  buildBody = [CustomHome(), TransactionScreen(), LoansScreen()];
   void onTap(int index){
 
     setState(() {
@@ -55,18 +56,18 @@ class _NavigationScreenState extends State<NavigationScreen> {
         label: "Loans",
         icon: (Icon(Icons.paid_rounded)))
      ]),
-      appBar: AppBar(
-        backgroundColor: Color(0xff83e85a),
-        automaticallyImplyLeading: false,
-         leading: Icon(Icons.menu),
-         actions: [
-          Icon(Icons.logout_outlined),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8.0),
-            child: Icon(Icons.notifications),
-          )
-          ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Color(0xff83e85a),
+      //   automaticallyImplyLeading: false,
+      //    leading: Icon(Icons.menu),
+      //    actions: [
+      //     Icon(Icons.logout_outlined),
+      //     Padding(
+      //       padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+      //       child: Icon(Icons.notifications),
+      //     )
+      //     ],
+      // ),
       body: buildBody[selectedIndex]
     );
   }
