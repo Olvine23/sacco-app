@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:state/src/presentation/widgets/buttonCell.dart';
+import 'package:state/src/presentation/widgets/cardWithImage.dart';
 
 class CustomHome extends StatelessWidget {
   const CustomHome({super.key});
@@ -51,7 +52,8 @@ class CustomHome extends StatelessWidget {
                       hintText: 'Search...',
                       prefixIcon: Icon(Icons.search),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        
+                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
                     ),
                   ),
@@ -114,6 +116,19 @@ class CustomHome extends StatelessWidget {
                   title: Text("Financial Management", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
                   ,trailing: Icon(Icons.chevron_right)
                   ),
+
+                  SizedBox(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                       CardWithImage(),
+                        CardWithImage(),
+                         CardWithImage(),
+                      
+                      CardWithImage() 
+                      ]),
+                  )
                   
                
               ],
