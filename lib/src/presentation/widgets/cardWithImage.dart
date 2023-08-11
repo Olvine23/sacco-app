@@ -12,7 +12,7 @@ class CardWithImage extends StatelessWidget {
         children: [
           // Background Image
           Container(
-            width: double.infinity /2,
+            width: 200,
             height: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -25,7 +25,7 @@ class CardWithImage extends StatelessWidget {
           ),
           // Colored Overlay
           Container(
-            width: double.infinity /2,
+            width: 200,
             height: 150,
             decoration: BoxDecoration(
               color: Colors.black

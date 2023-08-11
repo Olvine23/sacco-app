@@ -118,7 +118,8 @@ class CustomHome extends StatelessWidget {
                   ),
 
                   SizedBox(
-                    height: 200,
+                    
+                    height: 150,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
