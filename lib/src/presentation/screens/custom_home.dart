@@ -12,6 +12,7 @@ class CustomHome extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,8 +107,15 @@ class CustomHome extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 12,
+                  height: 20,
                 ),
+                ListTile(
+                  subtitle:Text("Your expense today: \$333,", style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black54),) ,
+                  title: Text("Financial Management", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
+                  ,trailing: Icon(Icons.chevron_right)
+                  ),
+                  
+               
               ],
             ),
           ),
