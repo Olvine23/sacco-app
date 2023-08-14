@@ -12,6 +12,7 @@ import 'package:state/src/presentation/statement_screen.dart';
 
 import '../welcome_screen.dart';
 import 'custom_home.dart';
+import 'profile.dart';
 
 class NavigationScreen extends StatefulWidget {
  NavigationScreen({super.key});
@@ -29,7 +30,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
  int selectedIndex = 0;
 
- final  buildBody = [CustomHome(), TransactionScreen(), LoansScreen()];
+ final  buildBody = [CustomHome(), TransactionScreen(), LoansScreen(),ProfilePage()];
   void onTap(int index){
 
     setState(() {
@@ -41,7 +42,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
      bottomNavigationBar: BottomNavigationBar(
-    
+    unselectedItemColor: Colors.black54,
+    unselectedLabelStyle: TextStyle(color: Colors.black54),
       onTap: onTap,
       currentIndex: selectedIndex,
       selectedItemColor: Colors.black,
@@ -54,7 +56,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
         icon: (Icon(Icons.receipt_long_rounded))),
        BottomNavigationBarItem(
         label: "Loans",
-        icon: (Icon(Icons.paid_rounded)))
+        icon: (Icon(Icons.paid_rounded))
+        
+        ),
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: 'My Profile')
      ]),
       // appBar: AppBar(
       //   backgroundColor: Color(0xff83e85a),

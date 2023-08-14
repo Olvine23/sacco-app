@@ -18,7 +18,7 @@ class CardWithImage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 image: NetworkImage(
-                    'https://bfsi.eletsonline.com/wp-content/uploads/2022/09/Bank-1.jpg'), // Replace with your image URL
+                    'https://cdn.pixabay.com/photo/2013/07/18/10/56/pile-163497_1280.jpg'), // Replace with your image URL
                 fit: BoxFit.cover,
               ),
             ),

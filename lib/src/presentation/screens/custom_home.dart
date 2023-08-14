@@ -52,7 +52,6 @@ class CustomHome extends StatelessWidget {
                       hintText: 'Search...',
                       prefixIcon: Icon(Icons.search),
                       border: OutlineInputBorder(
-                        
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
                     ),
@@ -104,34 +103,88 @@ class CustomHome extends StatelessWidget {
                       icon: Icons.money,
                     ),
                     ButtonCell(
-                        text: 'Send Money', icon: Icons.compare_arrows_outlined),
-                
+                        text: 'Send Money',
+                        icon: Icons.compare_arrows_outlined),
                   ],
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 ListTile(
-                  subtitle:Text("Your expense today: \$333,", style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black54),) ,
-                  title: Text("Financial Management", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
-                  ,trailing: Icon(Icons.chevron_right)
+                    subtitle: Text(
+                      "Your expense today: \$333,",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600, color: Colors.black54),
+                    ),
+                    title: Text(
+                      "Financial Management",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Icon(Icons.chevron_right)),
+                SizedBox(
+                  height: 150,
+                  child: ListView(scrollDirection: Axis.horizontal, children: [
+                    CardWithImage(),
+                    CardWithImage(),
+                    CardWithImage(),
+                    CardWithImage()
+                  ]),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Expenditure",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Today",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold)),
+                      SizedBox(
+                        height: 18,
+                      ),
+                      Text("\$122229290",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff3D6ADA))),
+                    ],
                   ),
-
-                  SizedBox(
-                    
-                    height: 150,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                       CardWithImage(),
-                        CardWithImage(),
-                         CardWithImage(),
-                      
-                      CardWithImage() 
-                      ]),
-                  )
-                  
-               
+                ),
+                ListTile(
+                  leading: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://cdn.pixabay.com/photo/2021/01/19/09/58/woman-5930691_1280.jpg'),
+                      radius: 20,
+                      backgroundColor: Colors.amber),
+                  title: Text("Cafes and restaurant"),
+                  subtitle: Text("\$25.9 monthly target"),
+                  trailing: Text("-\$30",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff3D6ADA))),
+                ),
+                ListTile(
+                  leading: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://cdn.pixabay.com/photo/2021/01/19/09/58/woman-5930691_1280.jpg'),
+                      radius: 20,
+                      backgroundColor: Colors.amber),
+                  title: Text("Cafes and restaurant"),
+                  subtitle: Text("\$25.9 monthly target"),
+                  trailing: Text("-\$30",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff3D6ADA))),
+                )
               ],
             ),
           ),
