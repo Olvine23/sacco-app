@@ -57,6 +57,8 @@ ImageModel? dataFromAPI;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+
+    
     //  body: _isLoading ? CircularProgressIndicator() : ListView.builder(
     //   itemCount: dataFromAPI!.hits.length,
     //   itemBuilder: (context, index){

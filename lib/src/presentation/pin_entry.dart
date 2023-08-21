@@ -91,7 +91,7 @@ class _PinEntryState extends State<PinEntry> {
                     minimumSize: const Size.fromHeight(50),
                   ),
                   onPressed: () {
-                    Navigator.push(context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
                       return NavigationScreen();
                     }));

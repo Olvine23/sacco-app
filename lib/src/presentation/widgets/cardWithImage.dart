@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CardWithImage extends StatelessWidget {
+  final String customText;
+
+  const CardWithImage({super.key, required this.customText});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,7 +21,7 @@ class CardWithImage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 image: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2013/07/18/10/56/pile-163497_1280.jpg'), // Replace with your image URL
+                    'https://cdn.pixabay.com/photo/2016/03/31/21/41/cash-1296584_1280.png'), // Replace with your image URL
                 fit: BoxFit.cover,
               ),
             ),
@@ -28,8 +31,8 @@ class CardWithImage extends StatelessWidget {
             width: 200,
             height: 150,
             decoration: BoxDecoration(
-              color: Colors.black
-                  .withOpacity(0.3), // Change overlay color and opacity
+              color: Color(0xff3D6ADA)
+                  .withOpacity(0.7), // Change overlay color and opacity
               borderRadius: BorderRadius.circular(10),
             ),
           ),
@@ -38,12 +41,15 @@ class CardWithImage extends StatelessWidget {
             bottom: 16,
             left: 16,
             right: 16,
-            child: Text(
-              'Beautiful Sunset',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: Text(
+               customText,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:state/src/presentation/screens/transactions_screen/deposit.dart';
+import 'package:state/src/presentation/statistics_screen.dart';
 import 'package:state/src/presentation/widgets/buttonCell.dart';
 import 'package:state/src/presentation/widgets/cardWithImage.dart';
 
@@ -75,13 +77,23 @@ class CustomHome extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
                     ),
-                    CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color(0xff3D6ADA),
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ))
+                    GestureDetector(
+                      onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context){
+
+                            return DepositScreen();
+
+                          }));
+                      },
+                      child: CircleAvatar(
+                        
+                          radius: 20,
+                          backgroundColor: Color(0xff3D6ADA),
+                          child: Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          )),
+                    )
                   ],
                 ),
                 SizedBox(
@@ -91,19 +103,29 @@ class CustomHome extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ButtonCell(
-                      text: 'Qr code',
-                      icon: Icons.qr_code_2_rounded,
+                      onTap: (){
+
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return StatisticsScreen();
+                        }));
+
+                      },
+                      text: 'Statistics',
+                      icon: Icons.bar_chart,
                     ),
                     ButtonCell(
-                      text: 'Bank',
-                      icon: Icons.wallet,
+                      text: 'Statement',
+                      icon: Icons.reorder,
                     ),
                     ButtonCell(
                       text: 'Payment',
                       icon: Icons.money,
                     ),
                     ButtonCell(
-                        text: 'Send Money',
+                        onTap: (){
+                         
+                        },
+                        text: 'Transact',
                         icon: Icons.compare_arrows_outlined),
                   ],
                 ),
@@ -122,13 +144,14 @@ class CustomHome extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     trailing: Icon(Icons.chevron_right)),
+                    Text("Explore"),
                 SizedBox(
                   height: 150,
                   child: ListView(scrollDirection: Axis.horizontal, children: [
-                    CardWithImage(),
-                    CardWithImage(),
-                    CardWithImage(),
-                    CardWithImage()
+                    CardWithImage(customText: 'Access to up to 5 times of your deposit with flexible payment period.',),
+                    CardWithImage(customText: 'Get 50% of your dividence earned this year',),
+                    CardWithImage(customText: 'Get 50% of your dividence earned this year',),
+                    CardWithImage(customText: 'Get 50% of your dividence earned this year',)
                   ]),
                 ),
                 SizedBox(

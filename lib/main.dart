@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,13 @@ import 'models/users.dart';
 import 'src/presentation/homepage.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp( DevicePreview(
+    enabled: false,
+     tools: [
+        ...DevicePreview.defaultTools,
+         
+      ],
+    builder:(context) => MyApp()));
 }
 
 class MyApp extends StatelessWidget {
